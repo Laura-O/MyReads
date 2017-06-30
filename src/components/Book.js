@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 
 class Book extends Component {
   render() {
+    const book = this.props.book
 
     return (
       <div>
-        <p>{this.props.book.title}</p>
-        <img src={this.props.book.imageLinks.smallThumbnail} />
-        <p>{this.props.book.authors}</p>
+        <p>{book.title}</p>
+        <img src={book.imageLinks.smallThumbnail} />
+        <p>{book.authors}</p>
       </div>
       )
   }

@@ -13,7 +13,11 @@ class ListBooks extends Component {
       <div>
         <ol>
         {this.props.books.map((book) => (
-          <li><Book book = {book} /></li>
+          <li>
+            <Book
+                book = {book}
+                />
+          </li>
         )
       )}
         </ol>
