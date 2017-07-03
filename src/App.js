@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom'
 import * as BooksAPI from './utils/BooksAPI'
 import "./App.css"
 import ListBooks from './components/ListBooks'
+import Search from './components/Search'
 
 class App extends Component {
   state = {
@@ -32,6 +33,12 @@ class App extends Component {
             books = {this.state.books}
             onChangeStatus={this.changeStatus}
           />
+           )} />
+           <Route path="/search" render={({ history }) => (
+             <Search
+               onChangeStatus={this.changeStatus}
+               onClose={() => history.push('/')}
+             />
            )} />
       </div>
     );
