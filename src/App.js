@@ -28,6 +28,7 @@ class App extends Component {
     
     return (
       <div className="App">
+        <h1>MyReads</h1>
         <Route exact path="/" render={() => (
           <ListBooks
             books = {this.state.books}
