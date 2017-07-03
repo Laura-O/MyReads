@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as BooksAPI from './utils/BooksAPI'
+import "./App.css"
 import BookShelf from './components/BookShelf'
 import ListBooks from './components/ListBooks'
 
@@ -15,12 +16,24 @@ class App extends Component {
   }
 
   render() {
+    const books = this.state.books
+    
+    let wantToRead
+    let currentlyReading
+    let read
+    
+    if(this.state.books !== null) {
+      currentlyReading = books.filter(book => book.shelf === 'currentlyReading')
+      wantToRead = books.filter(book => book.shelf === 'wantToRead')
+      read = books.filter(book => book.shelf === 'read')
+    }
+    
     return (
       <div className="App">
-      <BookShelf
-        books = {this.state.books}
-        />
-            {console.log(this.state.books)}
+        <h1>My Reads</h1>
+        <BookShelf books = {currentlyReading} title = "Currently Reading" />
+        <BookShelf books = {wantToRead} title = "Want to read"/>
+        <BookShelf books = {read} title = "Read"/>
       </div>
     );
   }

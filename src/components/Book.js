@@ -6,10 +6,14 @@ class Book extends Component {
     const book = this.props.book
 
     return (
-      <div>
-        <p>{book.title}</p>
-        <img src={book.imageLinks.smallThumbnail} />
-        <p>{book.authors}</p>
+      <div className="book">
+        <div className="book-top">
+          <div className="book-cover">
+            <img src={book.imageLinks.smallThumbnail} />
+          </div>
+          <div className="book-title">{book.title}</div>
+          <div className="book-authors">{book.authors ? book.authors[0] : ''}</div> 
+        </div>
       </div>
       )
   }
