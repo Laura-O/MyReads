@@ -9,9 +9,17 @@ class App extends Component {
   }
 
   componentDidMount() {
-    BooksAPI.getAll().then((books) => {
-      this.setState({ books })
-    })
+    this.getMyBooks()
+  }
+
+  // Helper function to get all user's books
+  getMyBooks = () => {
+    BooksAPI.getAll().then((books) => this.setState({ books }))
+  }
+
+  // Helper function to update the book's shelf
+  changeStatus = (event, book) => {
+    BooksAPI.update(book, event.target.value).then(() => this.getMyBooks())
   }
 
   render() {
@@ -30,9 +38,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1>My Reads</h1>
-        <BookShelf books = {currentlyReading} title = "Currently Reading" />
-        <BookShelf books = {wantToRead} title = "Want to read" />
-        <BookShelf books = {read} title = "Read" />
+        <BookShelf books = {currentlyReading} title = "Currently Reading" onChangeStatus={this.changeStatus} />
+        <BookShelf books = {wantToRead} title = "Want to read" onChangeStatus={this.changeStatus} />
+        <BookShelf books = {read} title = "Read" onChangeStatus={this.changeStatus} />
       </div>
     );
   }

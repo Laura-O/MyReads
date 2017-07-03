@@ -17,11 +17,12 @@ class BookShelf extends Component {
               <div className="shelf-books">
                   <ol className="books-list">
                     {this.props.books.map((book) => (
-                      <li className="books-list">
+                      <li className="books-list">                        
                         <Book
                             book = {book}
                             getBookById={this.props.getBookById}
                             key={book.id}
+                            onChangeStatus={this.changeStatus}
                             />
                       </li>
                     )
