@@ -8,23 +8,22 @@ class BookShelf extends Component {
   }
 
   render() {
-    const books = this.props.books
-    const onChangeStatus = this.props.onChangeStatus
+    const {book, onChangeStatus} = this.props
     
     return(
       <div>
-      <div className="bookshelf">
-              <h2 className="bookshelf-title">{this.props.title}</h2>
-              <div className="bookshelf-books">
-                  <ol className="books-grid">
+      <div className='bookshelf'>
+              <h2 className='bookshelf-title'>{this.props.title}</h2>
+              <div className='bookshelf-books'>
+                  <ol className='books-grid'>
                     {this.props.books.map((book) => (
                       <li key={book.id}>
                         <Book
-                            book = {book}
-                            getBookById={this.props.getBookById}
-                            key={book.id}
-                            onChangeStatus={onChangeStatus}
-                            />
+                          book = {book}
+                          getBookById={this.props.getBookById}
+                          key={book.id}
+                          onChangeStatus={onChangeStatus}
+                        />
                       </li>
                     )
                   )}
