@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Book from '../components/Book'
+import Panel from 'react-bootstrap/lib/Panel';
+import Badge from 'react-bootstrap/lib/Badge';
 
 class BookShelf extends Component {
   static propTypes = {
@@ -8,12 +10,13 @@ class BookShelf extends Component {
   }
 
   render() {
-    const {book, onChangeStatus} = this.props
+    const {books, onChangeStatus} = this.props
+    const numBooks = books.length
+    const title = (<h3>{this.props.title} <Badge>{numBooks}</Badge></h3>)
     
     return(
       <div>
-      <div className='bookshelf'>
-              <h2 className='bookshelf-title'>{this.props.title}</h2>
+        <Panel header={title}>
               <div className='bookshelf-books'>
                   <ol className='books-grid'>
                     {this.props.books.map((book) => (
@@ -29,7 +32,7 @@ class BookShelf extends Component {
                   )}
                 </ol>
               </div>
-          </div>
+        </Panel>
       </div>
 
     )

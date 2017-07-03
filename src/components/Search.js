@@ -4,6 +4,7 @@ import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
 import * as BooksAPI from '../utils/BooksAPI'
 import Book from '../components/Book'
+import Alert from 'react-bootstrap/lib/Alert';
 
 class Search extends Component {
   state = {
@@ -18,7 +19,8 @@ class Search extends Component {
 
       // Query the API, limit results to 10
       BooksAPI.search(escapeRegExp(query), 10).then((books) => {
-        if (books.error) {} else {
+        if (books.error) {
+        } else {
           // RegExp to match the search query, sort by title and update state
           const match = new RegExp(query, 'gi')
           foundBooks = books.filter((book) => match.test(book.title))

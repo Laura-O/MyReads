@@ -2,8 +2,11 @@ import React, {Component} from 'react';
 import {Route} from 'react-router-dom'
 import * as BooksAPI from './utils/BooksAPI'
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap-theme.css'
 import ListBooks from './components/ListBooks'
 import Search from './components/Search'
+import PageHeader from 'react-bootstrap/lib/PageHeader';
 
 class App extends Component {
   state = {
@@ -28,7 +31,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <h1 className='list-books-title'>MyReads</h1>
+        <PageHeader>MyReads</PageHeader>
         <Route exact path='/' render={() => (
           <ListBooks
             books={this.state.books}

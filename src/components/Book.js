@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import Image from 'react-bootstrap/lib/Image';
 
 class Book extends Component {       
   render() {
@@ -9,7 +10,7 @@ class Book extends Component {
       <div className='book'>
         <div className='book-top'>
           <div className='book-cover'>
-            <img src={book.imageLinks.smallThumbnail} />
+            <Image src={book.imageLinks.smallThumbnail} responsive thumbnail />
           </div>        
           <div className='book-shelf-changer'>
              <select defaultValue={book.shelf} onChange={(event) => onChangeStatus(event, book)}>

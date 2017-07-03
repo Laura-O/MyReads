@@ -23,6 +23,7 @@ class ListBooks extends Component {
     
     return (
       <div>
+        {console.log(books)}
         <BookShelf books = {currentlyReading} title = 'Currently Reading' onChangeStatus={onChangeStatus} />
         <BookShelf books = {wantToRead} title = 'Want to read' onChangeStatus={onChangeStatus} />
         <BookShelf books = {read} title = 'Read' onChangeStatus={onChangeStatus} />
