@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import ListBooks from '../components/ListBooks'
+import Book from '../components/Book'
 
 class BookShelf extends Component {
   static propTypes = {
@@ -8,16 +8,25 @@ class BookShelf extends Component {
   }
 
   render() {
-    
+    const books = this.props.books
     
     return(
       <div>
-      <div className="shelves">
+      <div className="book-shelf">
               <h2 className="shelf-title">{this.props.title}</h2>
               <div className="shelf-books">
                   <ol className="books-list">
-                    <ListBooks books = {this.props.books} />
-                  </ol>
+                    {this.props.books.map((book) => (
+                      <li className="books-list">
+                        <Book
+                            book = {book}
+                            getBookById={this.props.getBookById}
+                            key={book.id}
+                            />
+                      </li>
+                    )
+                  )}
+                </ol>
               </div>
           </div>
       </div>

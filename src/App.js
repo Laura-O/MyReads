@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import * as BooksAPI from './utils/BooksAPI'
 import "./App.css"
 import BookShelf from './components/BookShelf'
-import ListBooks from './components/ListBooks'
 
 class App extends Component {
   state = {
@@ -32,8 +31,8 @@ class App extends Component {
       <div className="App">
         <h1>My Reads</h1>
         <BookShelf books = {currentlyReading} title = "Currently Reading" />
-        <BookShelf books = {wantToRead} title = "Want to read"/>
-        <BookShelf books = {read} title = "Read"/>
+        <BookShelf books = {wantToRead} title = "Want to read" />
+        <BookShelf books = {read} title = "Read" />
       </div>
     );
   }

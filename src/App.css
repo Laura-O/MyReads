@@ -51,7 +51,7 @@ body {
   color: #999;
 }
 
-.book-list {
+.books-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -60,9 +60,13 @@ body {
   justify-content: center;
   flex-wrap: wrap;
 }
-.book-list li {
+.books-list li {
   padding: 10px 15px;
   text-align: left;
+}
+
+.book-shelf {
+  padding: 0 10px 20px;
 }
 
 .shelf-title {
