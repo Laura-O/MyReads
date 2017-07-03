@@ -1,18 +1,19 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-class Book extends Component {
-       
+class Book extends Component {       
   render() {
     const book = this.props.book
     const onChangeStatus = this.props.onChangeStatus
 
+    console.log(onChangeStatus)
+    
     return (
       <div className="book">
         <div className="book-top">
           <div className="book-cover">
             <img src={book.imageLinks.smallThumbnail} />
-          </div>
+          </div>        
           <div className="book-shelf-changer">
              <select defaultValue={book.shelf} onChange={(event) => onChangeStatus(event, book)}>
                <option value="none" disabled>Move to...</option>
@@ -22,9 +23,9 @@ class Book extends Component {
                <option value="none">None</option>
              </select>
            </div>
+         </div>
           <div className="book-title">{book.title}</div>
-          <div className="book-authors">{book.authors ? book.authors[0] : ''}</div> 
-        </div>
+          <div className="book-authors">{book.authors ? book.authors[0] : ''}</div>
       </div>
       )
   }
