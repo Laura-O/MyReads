@@ -11,7 +11,7 @@ class ListBooks extends Component {
 
     return (
       <div>
-        <ol>
+        <ul className="book-list">
         {this.props.books.map((book) => (
           <li>
             <Book
@@ -20,7 +20,7 @@ class ListBooks extends Component {
           </li>
         )
       )}
-        </ol>
+    </ul>
       </div>
       )
   }
