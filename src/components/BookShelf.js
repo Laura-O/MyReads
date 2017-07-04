@@ -16,7 +16,7 @@ class BookShelf extends Component {
     
     return(
       <div>
-        <Panel header={title}>
+        <Panel header={title} bsStyle="primary">
               <div className='bookshelf-books'>
                   <ol className='books-grid'>
                     {this.props.books.map((book) => (

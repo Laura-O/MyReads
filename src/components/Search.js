@@ -4,7 +4,6 @@ import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
 import * as BooksAPI from '../utils/BooksAPI'
 import Book from '../components/Book'
-import Alert from 'react-bootstrap/lib/Alert';
 
 class Search extends Component {
   state = {
