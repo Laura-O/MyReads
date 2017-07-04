@@ -5,7 +5,7 @@ import Badge from 'react-bootstrap/lib/Badge';
 
 const BookShelf = props => {
     const {books, onChangeStatus} = props
-    const numBooks = books.length
+    const numBooks = books ? books.length : 0;
     const title = (<h3>{props.title} <Badge>{numBooks}</Badge></h3>)
     
     return(
