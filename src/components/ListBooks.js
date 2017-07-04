@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import BookShelf from '../components/BookShelf'
+import PageHeader from 'react-bootstrap/lib/PageHeader';
 
 class ListBooks extends Component {
   
@@ -22,6 +23,7 @@ class ListBooks extends Component {
     
     return (
       <div>
+        <PageHeader>MyReads</PageHeader>
         <BookShelf books = {currentlyReading} title = 'Currently Reading' onChangeStatus={onChangeStatus} />
         <BookShelf books = {wantToRead} title = 'Want to read' onChangeStatus={onChangeStatus} />
         <BookShelf books = {read} title = 'Read' onChangeStatus={onChangeStatus} />

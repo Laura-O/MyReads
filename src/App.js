@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
 import ListBooks from './components/ListBooks'
 import Search from './components/Search'
-import PageHeader from 'react-bootstrap/lib/PageHeader';
 
 class App extends Component {
   state = {
@@ -31,7 +30,6 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <PageHeader>MyReads</PageHeader>
         <Route exact path='/' render={() => (
           <ListBooks
             books={this.state.books}
