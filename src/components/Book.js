@@ -20,7 +20,7 @@ class Book extends Component {
     let description = book.description
     let categories = book.categories
     let pageCount = book.pageCount
-    let authors = book.authors.join(", ")
+    let authors = (book.authors === undefined) ? book.authors : book.authors.join(", ")
     
     return (
       <div className='book'>
