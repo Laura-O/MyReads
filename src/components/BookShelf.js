@@ -1,29 +1,23 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
 import Book from '../components/Book'
 import Panel from 'react-bootstrap/lib/Panel';
 import Badge from 'react-bootstrap/lib/Badge';
 
-class BookShelf extends Component {
-  static propTypes = {
-    books: PropTypes.array.isRequired
-  }
-
-  render() {
-    const {books, onChangeStatus} = this.props
+const BookShelf = props => {
+    const {books, onChangeStatus} = props
     const numBooks = books.length
-    const title = (<h3>{this.props.title} <Badge>{numBooks}</Badge></h3>)
+    const title = (<h3>{props.title} <Badge>{numBooks}</Badge></h3>)
     
     return(
       <div>
         <Panel header={title} bsStyle="primary">
               <div className='bookshelf-books'>
                   <ol className='books-grid'>
-                    {this.props.books.map((book) => (
+                    {books.map((book) => (
                       <li key={book.id}>
                         <Book
                           book = {book}
-                          getBookById={this.props.getBookById}
+                          getBookById={props.getBookById}
                           key={book.id}
                           onChangeStatus={onChangeStatus}
                         />
@@ -36,7 +30,7 @@ class BookShelf extends Component {
       </div>
 
     )
-  }
 }
+
 
 export default BookShelf
